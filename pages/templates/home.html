@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+        {% if user.is_authenticated %}
+            <h1>Hi {{user.username}}</h1>
+        {% else %}
+            <h1>Hi not logged in user</h1>
+        {% endif %}
+
+        
+        <a href="/about">About me</a>
+        <ol>
+            {% for i in nums %}
+                {% if i == 6 %}
+                    <li>6,7</li>
+                {% else %}
+                    <li>{{i}}</li>
+                {% endif %}
+                
+            {% endfor %}
+        </ol>
+{% endblock %}

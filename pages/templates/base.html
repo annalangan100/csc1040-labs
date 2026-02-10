@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}Django {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <img src="{% static 'img/logo.png' %}" alt="Site logo"/>
+    <nav>
+        <a href="/">Home</a>
+        <a href="{% url 'home' %}">My homepage</a>
+        <a href="{% url 'profile' id=1 %}">Alices page</a>
+        <a href="/about">About us</a>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
